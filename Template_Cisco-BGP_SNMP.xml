@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2024-04-04T12:05:06Z</date>
+    <date>2024-04-10T09:25:16Z</date>
     <groups>
         <group>
             <uuid>e0242822f07b4633a283b8dc935d3dd9</uuid>
@@ -10,7 +10,7 @@
     </groups>
     <templates>
         <template>
-            <uuid>6f2a17c843dc48ad9b8ec77f187e57d0</uuid>
+            <uuid>c32bd3a6134c43bfaafb1865a51fc345</uuid>
             <template>Template Cisco BGP SNMP</template>
             <name>Template Cisco BGP SNMP</name>
             <description>Original by: Flavio Gomes Figueira Camacho Junior
@@ -59,7 +59,6 @@ https://github.com/flaviojunior1995/Zabbix-Templates
 
 My Github with changes I've made:
 https://github.com/johangunnarn/Zabbix
-My Discord if you have questions or something on your mind: stickan
 
 --------</description>
             <groups>
@@ -69,7 +68,7 @@ My Discord if you have questions or something on your mind: stickan
             </groups>
             <discovery_rules>
                 <discovery_rule>
-                    <uuid>0dfc3f64fc23479ba9166edecbee9761</uuid>
+                    <uuid>142ef912a48c4c2f9fd5125421ddd0ab</uuid>
                     <name>BGPv6 Peers Discovery</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.9.9.187.1.2.5.1.6.2.16,{#SNMPASN},.1.3.6.1.4.1.9.9.187.1.2.5.1.11.2.16]</snmp_oid>
@@ -78,15 +77,13 @@ My Discord if you have questions or something on your mind: stickan
                     <lifetime>7d</lifetime>
                     <item_prototypes>
                         <item_prototype>
-                            <uuid>02c83df4affb41beb363322a2b52fd17</uuid>
+                            <uuid>9de7ba471318449ab60d34c0e554a489</uuid>
                             <name>AS Name for IPv6 peer &quot;$2&quot; ASN &quot;$1&quot;</name>
                             <type>EXTERNAL</type>
                             <key>as_name[&quot;{#SNMPASN}&quot;,&quot;{#SNMPINDEX}&quot;,&quot;BGPv6&quot;]</key>
                             <delay>1d</delay>
                             <history>7d</history>
                             <trends>0</trends>
-                            <status>DISABLED</status>
-                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <tags>
                                 <tag>
@@ -100,7 +97,7 @@ My Discord if you have questions or something on your mind: stickan
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>c96bab9f8b274f26a94acb9ae0d6c111</uuid>
+                            <uuid>fefb6bad8bc64da4b26eb2483cee4438</uuid>
                             <name>Administrative status for peer &quot;$1&quot; ASN &quot;$2&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.4.2.16.{#SNMPINDEX}</snmp_oid>
@@ -123,7 +120,7 @@ My Discord if you have questions or something on your mind: stickan
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>0dab0cbc237a4d71a7f6cc946f514245</uuid>
+                            <uuid>9aa2356d345b4247a737db8c7781733e</uuid>
                             <name>Established time for peer &quot;$1&quot; ASN &quot;$2&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.19.2.16.{#SNMPINDEX}</snmp_oid>
@@ -144,7 +141,7 @@ My Discord if you have questions or something on your mind: stickan
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>ca734c6f51804a25b5f7715b7a0bd852</uuid>
+                            <uuid>e185c92499934e2189422693fcc2c137</uuid>
                             <name>Remote AS for peer &quot;$1&quot; ASN &quot;$2&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.11.2.16.{#SNMPINDEX}</snmp_oid>
@@ -164,7 +161,7 @@ My Discord if you have questions or something on your mind: stickan
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>1f8ce41427694cc1a6cad4cc5f0e218d</uuid>
+                            <uuid>e2231bed5a0341ae919e5e882ff6b9ac</uuid>
                             <name>Operational status for peer &quot;$1&quot; ASN &quot;$2&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.3.2.16.{#SNMPINDEX}</snmp_oid>
@@ -186,10 +183,10 @@ My Discord if you have questions or something on your mind: stickan
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>92277bc0279d44acbefe0b99ec7c8312</uuid>
+                            <uuid>3663b20a4efe428195d8bdd5ca778a14</uuid>
                             <name>Accepted prefix for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.1.{#SNMPINDEX}</snmp_oid>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.1.2.16.{#SNMPINDEX}.2.1</snmp_oid>
                             <key>cbgpPeer2AcceptedPrefixes[{#SNMPINDEX}]</key>
                             <delay>10m</delay>
                             <tags>
@@ -204,7 +201,7 @@ My Discord if you have questions or something on your mind: stickan
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>d1a64b429c794d76b9fb39b7567cc37e</uuid>
+                            <uuid>0a9f0c36a9c84e1993eccdd39a7f8b15</uuid>
                             <name>BGP peer last error &quot;$1&quot; ASN &quot;$2&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.17.2.16.{#SNMPINDEX}</snmp_oid>
@@ -407,10 +404,10 @@ return value</parameter>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>2bf3333f2334465c9378999e6fbb638d</uuid>
+                            <uuid>d5524b62458d461f981c7b49b665ea60</uuid>
                             <name>Maximum prefix for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.3.{#SNMPINDEX}</snmp_oid>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.3.2.16.{#SNMPINDEX}.2.1</snmp_oid>
                             <key>cbgpPeer2PrefixAdminLimit[{#SNMPINDEX}]</key>
                             <delay>1h</delay>
                             <tags>
@@ -425,10 +422,10 @@ return value</parameter>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>d9f4b618cd854ff597b15c537399802c</uuid>
+                            <uuid>3b0de0613dbd468e89911c47aee71b33</uuid>
                             <name>Max Prefix Threshold for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
-                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.4{#SNMPINDEX}</snmp_oid>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.4.2.16.{#SNMPINDEX}.2.1</snmp_oid>
                             <key>cbgpPeer2PrefixThreshold[{#SNMPINDEX}]</key>
                             <delay>1h</delay>
                             <tags>
@@ -443,7 +440,7 @@ return value</parameter>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>2f077646ccec4afab18e69559990631c</uuid>
+                            <uuid>4cc9e114518e43c4815f0a1664526009</uuid>
                             <name>Remote IPv6 Peer &quot;$1&quot;</name>
                             <type>EXTERNAL</type>
                             <key>oid_to_ipv6[&quot;{#SNMPINDEX}&quot;]</key>
@@ -465,7 +462,7 @@ return value</parameter>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <uuid>e92fcc4c92884e6badf7a3c3b08fe3ff</uuid>
+                            <uuid>e96de7ce72bc44339854e97c0a8ec152</uuid>
                             <expression>last(/Template Cisco BGP SNMP/cbgp6Peer2FsmEstablishedTime[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPASN}&quot;])&lt;{$PEER_LOW_TIME} and last(/Template Cisco BGP SNMP/oid_to_ipv6[&quot;{#SNMPINDEX}&quot;])&lt;&gt;0</expression>
                             <name>BGPv6 peer up time low {ITEM.LASTVALUE2} ASN {#SNMPASN}</name>
                             <priority>INFO</priority>
@@ -477,38 +474,46 @@ return value</parameter>
                             </dependencies>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <uuid>b9d84f915a1346c3848c6b3b39926dc4</uuid>
+                            <uuid>2bcf5669e89b4389a4dfd4d9b7cd5104</uuid>
                             <expression>last(/Template Cisco BGP SNMP/cbgp6Peer2State[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPASN}&quot;],#3)&lt;&gt;6 and last(/Template Cisco BGP SNMP/cbgp6Peer2AdminStatus[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPASN}&quot;])=2 and last(/Template Cisco BGP SNMP/oid_to_ipv6[&quot;{#SNMPINDEX}&quot;])&lt;&gt;0</expression>
                             <name>BGPv6 peer {ITEM.LASTVALUE3} ASN {#SNMPASN} is DOWN</name>
                             <priority>HIGH</priority>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <uuid>0cad316b9abd431fabf356beace04701</uuid>
-                            <expression>( last(/Template Cisco BGP SNMP/cbgpPeer2AcceptedPrefixes[{#SNMPINDEX}]) * 100 / last(/Template Cisco BGP SNMP/cbgpPeer2PrefixAdminLimit[{#SNMPINDEX}]) ) &gt; last(/Template Cisco BGP SNMP/cbgpPeer2PrefixThreshold[{#SNMPINDEX}])</expression>
-                            <name>BGPv6 Prefix Limit {#SNMPINDEX} ASN {#SNMPASN} near</name>
+                            <uuid>ed831b3b2abc41d9a1e38db5a2774844</uuid>
+                            <expression>( last(/Template Cisco BGP SNMP/cbgpPeer2AcceptedPrefixes[{#SNMPINDEX}]) * 100 / last(/Template Cisco BGP SNMP/cbgpPeer2PrefixAdminLimit[{#SNMPINDEX}]) ) &gt; last(/Template Cisco BGP SNMP/cbgpPeer2PrefixThreshold[{#SNMPINDEX}]) and last(/Template Cisco BGP SNMP/oid_to_ipv6[&quot;{#SNMPINDEX}&quot;])&lt;&gt;0</expression>
+                            <name>BGPv6 Prefix Limit {ITEM.LASTVALUE4} ASN {#SNMPASN} near</name>
                             <priority>WARNING</priority>
-                            <description>Triggered if current prefixes we accept * 100 / max configured prefixes is greater than the threshold in percentage
-
-Example 1:
-Number of prefixes we accept: 125
-Number of max prefix: 200
-Threshold: 75
-
-125 * 100 / 200 = 62,5
-Not above threshold, meaning not triggered
-
-Example 2: 
-Number of prefixes we accept: 125
-Number of max prefix: 150
-Threshold: 80
-
-125 * 100 / 150 = 62,5
-Above threshold, triggered</description>
+                            <description>Triggered if current prefixes we accept * 100 / max configured prefixes is greater than the threshold in percentage</description>
                         </trigger_prototype>
                     </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <uuid>f981ed05a6f4479b81b982d88325a8dc</uuid>
+                            <name>BGPv6 Prefix Accepted {#SNMPINDEX}</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
+                            <graph_items>
+                                <graph_item>
+                                    <color>FF0000</color>
+                                    <item>
+                                        <host>Template Cisco BGP SNMP</host>
+                                        <key>cbgpPeer2PrefixAdminLimit[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>00FF00</color>
+                                    <item>
+                                        <host>Template Cisco BGP SNMP</host>
+                                        <key>cbgpPeer2AcceptedPrefixes[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
                 </discovery_rule>
                 <discovery_rule>
-                    <uuid>6335539e89a94a1e90c09249b0ecf1c3</uuid>
+                    <uuid>3a11850ccee7460aa5b5562c9854bd03</uuid>
                     <name>BGPv4 Peers Discovery</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPASN},.1.3.6.1.4.1.9.9.187.1.2.5.1.11.1.4]</snmp_oid>
@@ -517,15 +522,13 @@ Above threshold, triggered</description>
                     <lifetime>7d</lifetime>
                     <item_prototypes>
                         <item_prototype>
-                            <uuid>89bbe4f5c21145489c68c7264c205132</uuid>
+                            <uuid>124a3dd9c5f74084bf7de83e4fe7a07a</uuid>
                             <name>AS Name for IPv4 peer &quot;{#SNMPINDEX}&quot;</name>
                             <type>EXTERNAL</type>
                             <key>as_name[&quot;{#SNMPASN}&quot;,&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>1d</delay>
                             <history>7d</history>
                             <trends>0</trends>
-                            <status>DISABLED</status>
-                            <discover>NO_DISCOVER</discover>
                             <value_type>CHAR</value_type>
                             <tags>
                                 <tag>
@@ -539,7 +542,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>35fc0ad74ae34ce4a9ef89cb769dc495</uuid>
+                            <uuid>52f40a3f84294f0ca63e2c4abd1eac96</uuid>
                             <name>Administrative status for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.4.1.4.{#SNMPINDEX}</snmp_oid>
@@ -562,7 +565,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>2ada67f625a54199bc6e879931c2e30e</uuid>
+                            <uuid>00204271cdf0419f86944145496853d4</uuid>
                             <name>Established time for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.19.1.4.{#SNMPINDEX}</snmp_oid>
@@ -583,7 +586,7 @@ Above threshold, triggered</description>
                             </tags>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <uuid>4601702511364ade9d24c7a6a8a7615b</uuid>
+                                    <uuid>d54146013ab7432da59e985997dd55a5</uuid>
                                     <expression>last(/Template Cisco BGP SNMP/cbgpPeer2FsmEstablishedTime[{#SNMPINDEX}])&lt;{$PEER_LOW_TIME}</expression>
                                     <name>BGPv4 peer up time low {#SNMPINDEX} ASN {#SNMPASN}</name>
                                     <priority>INFO</priority>
@@ -597,7 +600,7 @@ Above threshold, triggered</description>
                             </trigger_prototypes>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>036ad26376e0477e8961de22a38b9dda</uuid>
+                            <uuid>9d302a95a10d46e5824ad4de5d3e4d7e</uuid>
                             <name>Remote AS for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.11.1.4.{#SNMPINDEX}</snmp_oid>
@@ -617,7 +620,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>611c787349b64f269d6190d00e26e07c</uuid>
+                            <uuid>2031f7f5bb0a42c88b8b6cdc1fe2d69e</uuid>
                             <name>Operational status for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.5.1.3.1.4.{#SNMPINDEX}</snmp_oid>
@@ -639,7 +642,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>9f292d8915334d698550414a30bc98a6</uuid>
+                            <uuid>18faa91ffc0041a3b564dbf2c85a3a69</uuid>
                             <name>BGP peer last error &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.1.1.7.{#SNMPINDEX}</snmp_oid>
@@ -660,7 +663,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>6c9d45eb624643279daaaf2f944fe4d9</uuid>
+                            <uuid>77602ec7eb1a4050aace0857fe3ed457</uuid>
                             <name>Accepted prefix for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.1.1.1.{#SNMPINDEX}</snmp_oid>
@@ -680,7 +683,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>9b3d4c3df2844b5dae66c64a332a45bb</uuid>
+                            <uuid>58687eb1b9344152a3f5c173c18aa176</uuid>
                             <name>Maximum prefix for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.9.9.187.1.2.1.1.3.{#SNMPINDEX}</snmp_oid>
@@ -700,7 +703,7 @@ Above threshold, triggered</description>
                             </tags>
                         </item_prototype>
                         <item_prototype>
-                            <uuid>a07620e43d5045f6a5f62f2d8fdff979</uuid>
+                            <uuid>a67d53614ece47a0ac21b5c4693dc81b</uuid>
                             <name>Max Prefix Threshold for peer &quot;$1&quot;</name>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.4.1.4.{#SNMPINDEX}.1.1</snmp_oid>
@@ -722,43 +725,26 @@ Above threshold, triggered</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <uuid>f50a1a91f26c450091069a9066882199</uuid>
+                            <uuid>b6712e111c634876a110b4f06a6dcde1</uuid>
                             <expression>last(/Template Cisco BGP SNMP/cbgpPeer2State[{#SNMPINDEX}],#3)&lt;&gt;6 and last(/Template Cisco BGP SNMP/cbgpPeer2AdminStatus[{#SNMPINDEX}])=2</expression>
                             <name>BGPv4 peer {#SNMPINDEX} ASN {#SNMPASN} is DOWN</name>
                             <priority>HIGH</priority>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <uuid>9ff1463e2995457681b4d307f199ef7a</uuid>
+                            <uuid>fa57af0140b342fcbf07470033422334</uuid>
                             <expression>( last(/Template Cisco BGP SNMP/cbgpPeerPrefixAccepted[{#SNMPINDEX}]) * 100 / last(/Template Cisco BGP SNMP/cbgpPeerPrefixLimit[{#SNMPINDEX}]) ) &gt; last(/Template Cisco BGP SNMP/cbgpPeerPrefixThreshold[{#SNMPINDEX}])</expression>
                             <name>BGPv4 Prefix Limit {#SNMPINDEX} ASN {#SNMPASN} near</name>
                             <priority>WARNING</priority>
-                            <description>Triggered if current prefixes we accept * 100 / max configured prefixes is greater than the threshold in percentage
-
-Example 1:
-Number of prefixes we accept: 125
-Number of max prefix: 200
-Threshold: 75
-
-125 * 100 / 200 = 62,5
-Not above threshold, meaning not triggered
-
-Example 2: 
-Number of prefixes we accept: 125
-Number of max prefix: 150
-Threshold: 80
-
-125 * 100 / 150 = 62,5
-Above threshold, triggered</description>
+                            <description>Triggered if current prefixes we accept * 100 / max configured prefixes is greater than the threshold in percentage</description>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <uuid>f05e81ba268a453cbc4399c745aad3ae</uuid>
-                            <name>BGP Prefix Accepted {#SNMPINDEX}</name>
+                            <uuid>b6ffa42e054049deb8d38364dce09269</uuid>
+                            <name>BGPv4 Prefix Accepted {#SNMPINDEX}</name>
                             <ymin_type_1>FIXED</ymin_type_1>
                             <graph_items>
                                 <graph_item>
-                                    <drawtype>BOLD_LINE</drawtype>
                                     <color>FF0000</color>
                                     <item>
                                         <host>Template Cisco BGP SNMP</host>
@@ -787,7 +773,7 @@ Above threshold, triggered</description>
             </macros>
             <dashboards>
                 <dashboard>
-                    <uuid>29d0fa38c4644bf4a6f6298b8a6bf72f</uuid>
+                    <uuid>9daee7e1973a41d0845df8719e194481</uuid>
                     <name>Screen BGPv4</name>
                     <pages>
                         <page>
@@ -816,7 +802,7 @@ Above threshold, triggered</description>
                                             <type>GRAPH_PROTOTYPE</type>
                                             <name>graphid</name>
                                             <value>
-                                                <name>BGP Prefix Accepted {#SNMPINDEX}</name>
+                                                <name>BGPv4 Prefix Accepted {#SNMPINDEX}</name>
                                                 <host>Template Cisco BGP SNMP</host>
                                             </value>
                                         </field>
@@ -829,7 +815,7 @@ Above threshold, triggered</description>
             </dashboards>
             <valuemaps>
                 <valuemap>
-                    <uuid>e1bf28713c98486e8ba251b1b6c3b3f7</uuid>
+                    <uuid>1b5708c050fd41de9fffe58fe36abebd</uuid>
                     <name>BGP4-MIB::bgpPeerAdminStatus</name>
                     <mappings>
                         <mapping>
@@ -843,7 +829,7 @@ Above threshold, triggered</description>
                     </mappings>
                 </valuemap>
                 <valuemap>
-                    <uuid>225c0128ce1e4c39bb8487bd37fea91e</uuid>
+                    <uuid>02120612870e4bbf99f35b34b731feb2</uuid>
                     <name>BGP4-MIB::bgpPeerState</name>
                     <mappings>
                         <mapping>
