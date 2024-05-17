@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2024-05-17T06:48:04Z</date>
+    <groups>
+        <group>
+            <uuid>968b27f7ed2249e3833fb0b0c0cfe8f0</uuid>
+            <name>sems-servers</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>c9b6db6e0b204bcab9efebbc05377314</uuid>
+            <template>Yeti SEMS</template>
+            <name>Yeti SEMS</name>
+            <groups>
+                <group>
+                    <name>sems-servers</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>73d801690e514664b0fbd86429ef7683</uuid>
+                    <name>Sems call count</name>
+                    <key>sems.calls.count</key>
+                    <description>Amount of calls currently active on node</description>
+                </item>
+                <item>
+                    <uuid>8e2864e03fed4493aa4f35d283aa685e</uuid>
+                    <name>Sems version</name>
+                    <key>sems.sems.version</key>
+                    <delay>10m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+                <item>
+                    <uuid>b31cbae20aad4540af60070e699c0be5</uuid>
+                    <name>Sems service status</name>
+                    <key>sems.service.state</key>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>Status of sems service
+0 = inactive
+1 = active</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>4a6036f7db15441dba3e7d816adbfe1f</uuid>
+                            <expression>last(/Yeti SEMS/sems.service.state)&lt;&gt;&quot;active&quot;</expression>
+                            <name>Sems service DOWN</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>39893627390842f09e9b3829e84b15aa</uuid>
+                    <name>Sems yeti version</name>
+                    <key>sems.yeti.version</key>
+                    <delay>10m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <uuid>fcf3067cbe294d9397de4af20f107c4c</uuid>
+            <name>Sems call count</name>
+            <show_triggers>NO</show_triggers>
+            <type>STACKED</type>
+            <graph_items>
+                <graph_item>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Yeti SEMS</host>
+                        <key>sems.calls.count</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
