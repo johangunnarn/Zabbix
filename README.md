@@ -50,3 +50,4 @@ Items:
 
 Triggers:
 * If sems service is not running (inactive)
+* If no calls have been active the last hour
