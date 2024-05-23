@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2024-05-17T06:48:04Z</date>
+    <date>2024-05-23T06:04:51Z</date>
     <groups>
         <group>
             <uuid>968b27f7ed2249e3833fb0b0c0cfe8f0</uuid>
@@ -24,6 +24,14 @@
                     <name>Sems call count</name>
                     <key>sems.calls.count</key>
                     <description>Amount of calls currently active on node</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>98b6f5540acd45b1b0a0d9674f424c47</uuid>
+                            <expression>max(/Yeti SEMS/sems.calls.count,1h)=0</expression>
+                            <name>No calls in last hour</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <uuid>8e2864e03fed4493aa4f35d283aa685e</uuid>
